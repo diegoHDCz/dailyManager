@@ -1,4 +1,4 @@
-import { CommonRoutesConfig } from "../common/routes.conig";
+import { CommonRoutesConfig } from "../common/routes.config";
 import express, { NextFunction, Request, Response } from "express";
 
 export class UsersRoutes extends CommonRoutesConfig {
@@ -16,7 +16,7 @@ export class UsersRoutes extends CommonRoutesConfig {
       });
 
     this.app
-      .route("/users/:usersId")
+      .route("/user/:userId")
       .all((request: Request, response: Response, next: NextFunction) => {
         /**middleware code */
         next();
