@@ -52,7 +52,7 @@ class UsersDAO {
                 "password",
                 "firstName",
                 "lastName",
-                "permissionLevel",
+                "permissionFlags",
             ];
             for (let field of allowedPatchFields) {
                 if (field in user) {

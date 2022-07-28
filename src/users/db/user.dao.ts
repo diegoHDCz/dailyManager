@@ -63,3 +63,4 @@ class userDaoMongo {
     return await this.User.deleteOne({ _id: userId }).exec();
   }
 }
+export default new userDaoMongo();
