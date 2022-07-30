@@ -41,8 +41,13 @@ class userDaoMongo {
     return await this.User.findOne({ email: email }).exec();
   }
   async getUserById(userId: string) {
-    return await this.User.findOne({ _id: userId }).populate("User").exec();
+    try {
+      return this.User.findOne({ _id: userId }).exec();
+    } catch (err) {
+      console.log(err);
+    }
   }
+
   async getUsers(limit = 25, page = 0) {
     return await this.User.find()
       .limit(limit)

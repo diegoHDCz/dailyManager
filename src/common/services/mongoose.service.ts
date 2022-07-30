@@ -9,6 +9,7 @@ class MongooseService {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     serverSelectionTimeoutMS: 5000,
+    
   };
   constructor() {
     this.connectWithRetry();

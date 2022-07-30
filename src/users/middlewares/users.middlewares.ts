@@ -4,20 +4,6 @@ import usersService from "../services/users.service";
 
 const log: Debugger = debug("app:users-controller");
 class UsersMiddleware {
-  async validateRequiredUserBodyFields(
-    req: Request,
-    res: Response,
-    next: NextFunction
-  ) {
-    if (req.body && req.body.email && req.body.password) {
-      next();
-    } else {
-      res.status(400).send({
-        error: `Missing required fields email and password`,
-      });
-    }
-  }
-
   async validateSameEmailDoesntExist(
     req: Request,
     res: Response,
