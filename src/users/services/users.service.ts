@@ -1,4 +1,4 @@
-import usersDAO from '../db/user.dao'
+import usersDAO from "../db/user.dao";
 import { CRUD } from "../../common/crud.interface";
 import { CreateUserDTO } from "../dtos/CreateUsersDTO";
 import { PatchUserDTO } from "../dtos/PatchUsersDTO";
@@ -31,6 +31,9 @@ class UsersService implements CRUD {
 
   async getUserByEmail(email: string) {
     return usersDAO.getUserByEmail(email);
+  }
+  async getUserByEmailWithPassword(email: string) {
+    return usersDAO.getUserByEmailWithPassword(email);
   }
 }
 export default new UsersService();
